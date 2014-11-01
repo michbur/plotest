@@ -1,0 +1,10 @@
+Package: plotest
+Type: Package
+Title: Print Test Outputs on Plots
+Version: 1.0
+Date: 2014-11-01
+Authors@R:person("Michal", "Burdukiewicz", 
+      email = "michalburdukiewicz@gmail.com", role = c("cre", "aut"))
+Description: plotest conteins a bunch of convenient methods allowing easy plotting of tests' results on R figures.
+License: GPL-3
+URL: https://github.com/michbur/plotest
