@@ -3,23 +3,26 @@
 \alias{plot.htest}
 \title{Plots htest objects}
 \usage{
-\method{plot}{htest}(x, legend_pos = "topleft", digits = 4L, quote = TRUE,
-  prefix = "", ...)
+\method{plot}{htest}(x, legend_pos = "topleft", digits = 4L, ...)
+}
+\arguments{
+\item{x}{an object of class \code{htest}.}
+
+\item{legend_pos}{a position of the text on the plot. Either matrix or a single keyword.
+See Details section of \code{\link[graphics]{legend}}.}
+
+\item{digits}{number of digits.}
+
+\item{...}{additional arguments sent to \code{\link[graphics]{legend}}.}
 }
 \description{
 Plots htest objects.
-}
-\details{
-This is a generic function: methods can be defined for it directly
-or via the \code{\link{Summary}} group generic. For this to work properly,
-the arguments \code{...} should be unnamed, and dispatch is on the
-first argument.
 }
 \examples{
 x <- rnorm(10)
 y <- rnorm(10)
 sample_test <- cor.test(x, y)
 plot(x, y)
-plot(sample_test, topleft)
+plot(sample_test, "topleft")
 }
 
