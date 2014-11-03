@@ -3,7 +3,8 @@
 \alias{plot.htest}
 \title{Plots htest objects}
 \usage{
-\method{plot}{htest}(x, legend_pos = "topleft", digits = 4L, ...)
+\method{plot}{htest}(x, legend_pos = "topleft", digits = 4L, bty = "n",
+  ...)
 }
 \arguments{
 \item{x}{an object of class \code{htest}.}
@@ -13,14 +14,17 @@ See Details section of \code{\link[graphics]{legend}}.}
 
 \item{digits}{number of digits.}
 
+\item{bty}{the type of box to be drawn around the plotted test. The allowed values are "o"
+(border around plotted test information) and "n" (no border; the default).}
+
 \item{...}{additional arguments sent to \code{\link[graphics]{legend}}.}
 }
 \description{
-Plots htest objects.
+Adds htest objects to existing plots.
 }
 \examples{
-x <- rnorm(10)
-y <- rnorm(10)
+x <- 1:20
+y <- exp(x)
 sample_test <- cor.test(x, y)
 plot(x, y)
 plot(sample_test, "topleft")
