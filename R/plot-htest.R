@@ -12,9 +12,13 @@
 #' of the output.
 #' @param extend a non-negative integer specifying the indentation of subsequent lines in 
 #' paragraphs.
-#' @param ... additional arguments sent to \code{\link[graphics]{legend}}. 
-#' @details Longer lines are splitted on whitespaces using 
-#' \code{\link[base]{strwrap}} function.
+#' @param ... additional arguments sent to \code{\link[graphics]{legend}}.
+#' @seealso 
+#' undocumented stats:::print.htest function - printing test summary.
+#' 
+#' \code{\link[graphics]{legend}} - responsible for adding test summary to plots.
+#' 
+#' \code{\link[base]{strwrap}} - splits longer lines on whitespaces.
 #' @examples
 #' 
 #' #Example 1: test for correlation between paired samples
@@ -30,8 +34,8 @@
 #' barplot(x, beside = TRUE)
 #' plot(sample_chisqtest, "topright")
 
-plot.htest <- function(x, legend_pos = "topleft", digits = 4L, bty = "n", n_char = 40,
-                       exdent = 2, ...) {
+plot.htest <- function(x, legend_pos = "topleft", digits = 4L, bty = "n", n_char = 45,
+                       exdent = 4, ...) {
   #output
   out <- capture.output(print(x, digits = digits))
   n_chars <- sapply(out, nchar, USE.NAMES = FALSE)

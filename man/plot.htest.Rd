@@ -4,7 +4,7 @@
 \title{Plots htest objects}
 \usage{
 \method{plot}{htest}(x, legend_pos = "topleft", digits = 4L, bty = "n",
-  n_char = 40, exdent = 2, ...)
+  n_char = 45, exdent = 4, ...)
 }
 \arguments{
 \item{x}{an object of class \code{htest}.}
@@ -28,10 +28,6 @@ paragraphs.}
 \description{
 Adds htest objects to existing plots.
 }
-\details{
-Longer lines are splitted on whitespaces using
-\code{\link[base]{strwrap}} function.
-}
 \examples{
 #Example 1: test for correlation between paired samples
 x <- 1:20
@@ -45,5 +41,12 @@ x <- matrix(c(12, 5, 7, 7), ncol = 2)
 sample_chisqtest <- chisq.test(x, y)
 barplot(x, beside = TRUE)
 plot(sample_chisqtest, "topright")
+}
+\seealso{
+undocumented stats:::print.htest function - printing test summary.
+
+\code{\link[graphics]{legend}} - responsible for adding test summary to plots.
+
+\code{\link[base]{strwrap}} - splits longer lines on whitespaces.
 }
 
